@@ -1,0 +1,22 @@
+{
+  "name": "nodejs-es6",
+  "version": "1.0.0",
+  "description": "workshop nodejs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rmboloix/nodejs-es6.git"
+  },
+  "keywords": [
+    "nodejs"
+  ],
+  "author": "rafael.mateo@atrapalo.com",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rmboloix/nodejs-es6/issues"
+  },
+  "homepage": "https://github.com/rmboloix/nodejs-es6#readme"
+}
