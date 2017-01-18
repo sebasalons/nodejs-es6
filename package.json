@@ -18,5 +18,8 @@
   "bugs": {
     "url": "https://github.com/rmboloix/nodejs-es6/issues"
   },
-  "homepage": "https://github.com/rmboloix/nodejs-es6#readme"
+  "homepage": "https://github.com/rmboloix/nodejs-es6#readme",
+  "dependencies": {
+    "express": "^4.14.0"
+  }
 }
