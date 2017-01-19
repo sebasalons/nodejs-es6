@@ -17,7 +17,7 @@ api.use(function (req, res, next){
 
 api.get('/book/:id', function (req, res) {
     let id = req.params.id;
-    let FindBookById = require('./Application/Book/FindBookById');
+    let FindBookById = require('src/Application/Book/FindBookById');
 
     FindBookById(id, (err, book) => {
         if(err){
