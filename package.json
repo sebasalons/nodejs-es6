@@ -4,7 +4,8 @@
   "description": "workshop nodejs",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "gulp test",
+    "watch" : "gulp watch"
   },
   "repository": {
     "type": "git",
@@ -21,5 +22,10 @@
   "homepage": "https://github.com/rmboloix/nodejs-es6#readme",
   "dependencies": {
     "express": "^4.14.0"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-mocha": "^3.0.1",
+    "mocha": "^3.2.0"
   }
 }

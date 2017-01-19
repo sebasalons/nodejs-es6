@@ -11,9 +11,11 @@ module.exports.findBookById = function(id, callback){
         callback(new Error('Book Not Found'), null);
         return;
     }
-
     callback(null, book);
+};
 
+module.exports.findBooks = function(callback){
+    return callback(null, books);
 };
 
 function findBook(bookId)
