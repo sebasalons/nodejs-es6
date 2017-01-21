@@ -24,9 +24,19 @@ api.get('/book/:id', function (req, res) {
             res.status(404).json(err.message);
             return;
         }
-
         res.json(book);
     });
+});
+
+api.get('/book', function(req, res){
+    let FindAllBooks = require('src/Application/Book/FindAllBooks');
+    FindAllBooks((err, books) => {
+        if(err){
+            res.status(404).json(err.message);
+            return;
+        }
+        res.json(books);
+    })
 });
 
 module.exports = api;

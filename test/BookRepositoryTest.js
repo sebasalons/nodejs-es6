@@ -24,7 +24,7 @@ describe('Book repository', () => {
     });
 
     it('can get all books', () => {
-        BookRepository.findBooks((err, books) =>{
+        BookRepository.findAllBooks((err, books) =>{
             assert.ifError(err);
             assert.equal(3, books.length);
             assert.equal('Clean Code', books[0].getName());

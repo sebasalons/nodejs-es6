@@ -14,7 +14,7 @@ module.exports.findBookById = function(id, callback){
     callback(null, book);
 };
 
-module.exports.findBooks = function(callback){
+module.exports.findAllBooks = function(callback){
     return callback(null, books);
 };
 
