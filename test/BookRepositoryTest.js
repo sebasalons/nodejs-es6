@@ -30,4 +30,50 @@ describe('Book repository', () => {
             assert.equal('Clean Code', books[0].getName());
         });
     });
+
+    it('add book', () => {
+        let book = {
+            "name": "OReilly.Head.First.Design.Patterns",
+            "author": "Eric Freeman",
+            "pages": 694,
+            "publisher": "O'Reilly Media"
+        }
+
+        BookRepository.addBook(book,(err,newBook) => {
+            assert.ifError(err);
+            assert.equal(book.name,newBook.name);
+        });
+    });
+
+    it('update book', () => {
+        let book = {
+            "name": "OReilly.Head.First.Design.Patterns",
+            "author": "Eric Freeman",
+            "pages": 694,
+            "publisher": "O'Reilly Media"
+        }
+
+        BookRepository.updateBook(1,book,(err,updateBook) => {
+            assert.ifError(err);
+            assert.equal(book.name,updateBook.name);
+        });
+    });
+
+    it('delete book', () => {
+       BookRepository.deleteBook(1,(err,deleteBook) => {
+           assert.ifError(err);
+           assert.equal(1,deleteBook.id);
+       });
+    });
+
+    it('list book', () => {
+        let filter = {
+            "id":2,
+            "name":"Building Microservices"
+        }
+        BookRepository.listBook(filter,(err,books) => {
+            assert.ifError(err);
+            assert.equal(1,books.length);
+        });
+    });
 });

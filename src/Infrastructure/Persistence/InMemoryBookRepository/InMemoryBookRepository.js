@@ -18,6 +18,53 @@ module.exports.findAllBooks = function(callback){
     return callback(null, books);
 };
 
+module.exports.addBook = function(data,callback){
+    let id = books.length + 1;
+    let book = new Book(id,data.name,data.author,data.pages,data.publisher);
+    books.push(book);
+    return callback(null,book);
+}
+
+module.exports.updateBook = function(id,data,callback){
+    let book = new Book(id,data.name,data.author,data.pages,data.publisher);
+    let index = books.findIndex(x => x.id === id);
+    if(index != -1) {
+        books[index] = book;
+        return callback(null,book);
+    }
+    return callback(new Error('Book Not Found'),null);
+}
+
+module.exports.deleteBook = function(id,callback){
+    let index = books.findIndex(x => x.id === id);
+    if(index != -1) {
+        let book = books[index];
+        books.splice(index,1);
+        return callback(null,book);
+    }
+    return callback(new Error('Book Not Found'),null);
+}
+
+module.exports.listBook = function(filter,callback) {
+    let list = [];
+    for(let i = 0; i < books.length;i++) {
+        var find = true;
+        Object.keys(filter).forEach(function(key) {
+            if(books[i][key] != filter[key]) {
+                find = false;
+            }
+        });
+        if(find) {
+            list.push(books[i]);
+        }
+    }
+    if(list.length === 0) {
+        return callback(new Error('Book Not Found'),null);
+    }
+    callback(null,list);
+}
+
+
 function findBook(bookId)
 {
     for(let i = 0; i < books.length; i++){
